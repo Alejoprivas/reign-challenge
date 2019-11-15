@@ -3,14 +3,12 @@ import http from "http";
 import bodyParser from "body-parser";
 import path from "path";
 
-import swaggerUi from "swagger-ui-express";
-import yaml from "yamljs";
-
-import properties from "../properties";
+import swaggerUi from "swagger-ui-express"; 
+import properties from "../properties.js";
 
 import cors from "cors";
 
-import Database from "./Database";
+import Database from "./Database.js";
 
 //Controllers
 
@@ -38,3 +36,5 @@ class Server{
         
     }
 }
+
+export default new Server();

@@ -2,9 +2,11 @@
   "name": "reign-hacker",
   "version": "1.0.0",
   "description": "challenge",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "cd client && npm install && cd ../server && npm install",
+    "start": "concurrently --raw \"cd server && npm start\" \"cd client && ng build --prod\" ",
+    "build": "concurrently --raw \"cd server && npm run build\" \"cd client && npm run build\" ",
+    "debug": "concurrently --raw \"cd server && npm run debug\" \"cd client && npm run build\" "
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Alejoprivas/reign-challenge/issues"
   },
-  "homepage": "https://github.com/Alejoprivas/reign-challenge#readme"
+  "homepage": "https://github.com/Alejoprivas/reign-challenge#readme",
+  "dependencies": {
+    "concurrently": "^5.0.0"
+  }
 }

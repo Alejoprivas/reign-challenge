@@ -3,8 +3,9 @@ import Server from "./classes/Server";
 
 const start = async() =>{
     try{
-        //start the application
+        
         await Server.init();
+       console.log("start");
     }catch(err){
 
         throw err;

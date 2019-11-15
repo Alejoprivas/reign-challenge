@@ -1,0 +1,24 @@
+{
+  "name": "reign-hacker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Challenge",
+  "scripts": {
+    "build": "nodemon app.js",
+    "start": "nodemon app.js",
+    "debug": "nodemon --debug-brk app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.5",
+    "esm": "^3.2.25",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.0",
+    "nodemon": "^1.11.0",
+    "swagger-ui-express": "^2.0.15"
+  },
+  "repository": {}
+}
