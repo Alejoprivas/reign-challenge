@@ -1,15 +1,15 @@
 
 <mat-list>
-        <span  *ngFor="let i of [1,2,3,4]" >
-            <mat-list-item class="news-row">
-                <div class="news-title">WordPress 4.3 be rewritten</div>
-                <div class="author"> - Garbage - </div>
+        <div  *ngFor="let news of newslist" >
+            <mat-list-item  (click)="openNews(news)" *ngIf="news.story_title || news.title "  class="news-row" >
+                <div class="news-title">{{ news.story_title || news.title  }}</div>
+                <div class="author"> - {{news.author}} - </div>
                 <div class="created_at">
-                    <span class="date_text"> 11:35 Am</span>
-                    <span class="trash_icon"><mat-icon  aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></span> 
+                    <span class="date_text"> {{news.created_at}} </span>
+                    <span class="trash_icon" (click)="deleteNews(news._id)" ><mat-icon  aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></span> 
                 </div>
             </mat-list-item>
-            <mat-divider></mat-divider>
-        </span>
+            <mat-divider *ngIf="news.story_title || news.title "></mat-divider>
+        </div>
 </mat-list>
       
