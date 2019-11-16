@@ -4,10 +4,19 @@ import mongoose, {Schema} from "mongoose";
 
 const HackerNewsModel = {
     init(){
-        const db = Database.getConnection();
+        const db = Database;
         
         const hackerNewsSchema = new mongoose.Schema({            
-        name: {
+        story_title: {
+            type: "String"
+        },
+        title: {
+            type: "String"
+        },
+        created_at: {
+            type: "String"
+        },
+        author: {
             type: "String"
         },
         received: {
@@ -16,10 +25,21 @@ const HackerNewsModel = {
         }
         })
 
-        HackerNewsModel.setModel(db.connect.model("HackersNews",hackerNewsSchema));
         
+
+        HackerNewsModel.model= mongoose.model('HackerNews',hackerNewsSchema);  
+
         return hackerNewsSchema
+    }, 
+    async findAll() {
+        
+        return await HackerNewsModel.model.find();
+    },  
+    async create(params) {
+        
+        return await HackerNewsModel.model.create(Object.assign({},params));
     }
+  
 }
 
 

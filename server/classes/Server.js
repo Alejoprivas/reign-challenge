@@ -10,6 +10,8 @@ import cors from "cors";
 import cron from "node-cron";
 import Database from "./Database.js";
 
+
+import HackerNewsController from "../controllers/HackerNewsController"
 //Controllers
 
 class Server{
@@ -29,10 +31,14 @@ class Server{
         //Start Server
         const server = http.Server(this.app);
         this.app.use(express.static(properties.publicPath));
-
+        console.log("localhost:"+properties.port);
         //Import controllers
         const router = express.Router();
-        
+        await server.listen(properties.port);
+
+        HackerNewsController.init(router);
+
+        this.app.use("/",router);
         
     }
 }

@@ -21,6 +21,9 @@ class Database {
 
             console.log(`mongodb://:${properties.db_url}`)
             this.DatabaseConnection = await mongoose.connect(`mongodb://${properties.db_url}`,{useNewUrlParser:true});
+
+ 
+
         }catch(err){
             console.log(`Failed connection to the DB: ${err.message}`)
 
@@ -30,8 +33,6 @@ class Database {
 
         }
     }
-    getConnection(){
-        this.DatabaseConnection;
-    }
+   
 };
 export default new Database();
