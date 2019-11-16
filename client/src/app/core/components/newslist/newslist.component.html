@@ -1,21 +1,15 @@
 
 <mat-list>
-        <mat-list-item class="news-row">
-            <div class="news-title">WordPress 4.3 be rewritten</div>
-            <div class="author">- Garbage -</div>
-            <div class="created_at">11:35 Am </div>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>
-                <div class="news-title">Amazon mamazon</div>
-                <div class="author">- kolento -</div>
-                <div class="created_at">yesterday </div>
+        <span  *ngFor="let i of [1,2,3,4]" >
+            <mat-list-item class="news-row">
+                <div class="news-title">WordPress 4.3 be rewritten</div>
+                <div class="author"> - Garbage - </div>
+                <div class="created_at">
+                    <span class="date_text"> 11:35 Am</span>
+                    <span class="trash_icon"><mat-icon  aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></span> 
+                </div>
             </mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>
-                <div class="news-title">Polygot weekly: a rust test</div>
-                <div class="author">- benjamincoe -</div>
-                <div class="created_at">yesterday </div>
-        </mat-list-item>
+            <mat-divider></mat-divider>
+        </span>
 </mat-list>
       
