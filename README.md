@@ -1,6 +1,11 @@
+
 --------------
+
 ## INSTALL DATABASE
+
 --------------
+
+  
 
   
 
@@ -8,7 +13,11 @@
 
   
 
+  
+
 * Open the file to launch the wizard.
+
+  
 
   
 
@@ -16,48 +25,98 @@
 
   
 
+  
+
 --------------
+
+  
 
 ## START APPLICATION
 
+  
+
 --------------
+
+  
 
   
 
 To launch the application start a local instance of MongoDB, open a terminal in this folder and type:
 
+  
+
 ``` bash
+
+  
 
 $ npm install
 
+  
+
 $ npm start
+
+  
 
 ```
 
   
 
-Go to http://localhost:3000
+  
+
+Go to http://localhost:4200
+
+  
 
   
 
 --------------
+
+  
 
 ## CONFIGURE
 
+  
+
 --------------
 
   
 
-Set database config in `properties.js`
+  
 
+Set database config in `./server/properties.js` 
+
+    //server/properties
+    module.exports = {
+    db_url: (process.env.DB_HOST || 'localhost') + ':27017/hackerNews',
+    publicPath: '../client/dist',
+    port: process.env.NODE_PORT || 3000,
+    scrapUrl: "https://hn.algolia.com/api/v1/search_by_date?query=nodejs",
+    api: process.env.NODE_API != null ? process.env.NODE_API : '/api',
+    seedDB: process.env.seedDB != null ? process.env.seedDB : true   
+    }
+   
 you can seed the database by changing the properties to true.
+
+client environment variables are in `./server/properties.js`
+
+	export const environment = {
+	production: false,
+	apiUrl: 'http://localhost:3000/api'
+	};
+
   
 
 --------------
+
+  
 
 ## START WITH DOCKER
 
+  
+
 --------------
+
+  
 
   
 
@@ -65,29 +124,46 @@ you can seed the database by changing the properties to true.
 
   
 
+  
+
 * Install Docker
+
+  
 
   
 
 * Run command:
 
+  
+
 ``` bash
+
+  
 
 docker-compose up
 
+  
+
 ```
 
-* Go to http://localhost:80
+  
+
+* Go to http://localhost:4200
 
   
+
   
 
 * When code changes you need to rebuild container running:
 
+  
+
 ``` bash
+
+  
 
 docker-compose up --build
 
-```
-
   
+
+```
