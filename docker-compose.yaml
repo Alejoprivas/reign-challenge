@@ -33,7 +33,7 @@ services:
   frontend:
     build: ./client
     ports:
-      - "2000:2000"
+      - "4200:4200"
     networks:
       - frontend_network
 
