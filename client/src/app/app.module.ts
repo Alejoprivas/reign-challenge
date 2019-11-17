@@ -8,12 +8,14 @@ import { NewslistComponent } from './core/components/newslist/newslist.component
 import { HeaderComponent } from './shared/layout/header/header.component';
 
 import {MaterialModule} from './material.module';
+import { DateChangerPipe } from './pipes/date-changer.pipe';
 
 @NgModule({
   declarations: [
     AppComponent, 
     HeaderComponent,
-    NewslistComponent
+    NewslistComponent,
+    DateChangerPipe
   ],
   imports: [
     BrowserModule,

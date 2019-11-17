@@ -20,7 +20,7 @@ export class NewsService {
     .pipe(map(data => data));
   }
   deleteNews(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.contextUrl}/` + id)
+    return this.http.delete<void>(`${this.contextUrl}/news/delete/` + id)
     .pipe(map(data => data));
   }
 }

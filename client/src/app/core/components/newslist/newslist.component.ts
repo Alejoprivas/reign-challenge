@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {News} from "src/app/models/news";
 import {NewsService} from "src/app/core/services/news-service.service"
 
-
+//https://medium.com/@thunderroid/angular-date-ago-pipe-minutes-hours-days-months-years-ago-c4b5efae5fe5
 @Component({
   selector: 'app-newslist',
   templateUrl: './newslist.component.html',
@@ -22,18 +22,17 @@ export class NewslistComponent implements OnInit {
     this.getAll()
   }
   openNews(url){
-    console.log(url)
-    //window.open(url, "_blank");
+    window.open(url, "_blank");
   }
-  deleteNews(url){
-    
-    //window.open(url, "_blank");
+  deleteNews(id){
+    console.log(id)
+    this.newsService.deleteNews(id).subscribe((data) =>{ 
+      this.getAll();
+    }); 
   }
-  getAll(): void {
-    this.news = new News(null,null,null,null);
+  getAll(): void { 
     this.newsService.getAllNews().subscribe(newslist => {
-      this.newslist = newslist;
-      console.log(newslist);
+      this.newslist = newslist; 
     });
   }
 }
