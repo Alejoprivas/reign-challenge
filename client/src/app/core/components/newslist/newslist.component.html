@@ -1,19 +1,25 @@
 
-<mat-list>
-        <div  *ngFor="let news of newslist" >
-            <mat-list-item   *ngIf="news.story_title || news.title "  class="news-row" >
-            <div class="inline" (click)="openNews(news.story_url)">
+<mat-nav-list>
+    <span *ngFor="let news of newslist">
+        <mat-list-item  >
+            <a matLine (click)="openNews(news.story_url)" href="javascript:void(0)">
+                <span class="news-title">
+                    {{ news.story_title || news.title  }} 
+                </span>
+                <span class="author">
+                    - {{news.author}} - 
+                </span>
+                <span class="date_text">
+                    {{news.created_at | dateAgo }} 
+                </span>
+                
+            </a>
+            <button (click)="deleteNews(news._id)" mat-icon-button>
+                <mat-icon  aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+            </button>
+        </mat-list-item>
+        <mat-divider *ngIf="news.story_title || news.title "></mat-divider>
+    </span>
+    </mat-nav-list>    
 
-                <div  class="news-title">{{ news.story_title || news.title  }}</div>
-                <div class="author"> - {{news.author}} - </div>
-                <div class="date_text"> {{news.created_at | dateAgo }} </div>
-            </div>
-                <div class="created_at" (click)="deleteNews(news._id)">
-                    <span class="trash_icon"  ><mat-icon  aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></span> 
-                </div>
-            </mat-list-item>
-            <mat-divider *ngIf="news.story_title || news.title "></mat-divider>
-        </div>
-</mat-list>
-      
-<!--(click)="openNews(news)"-->
+    
