@@ -1,6 +1,10 @@
 
 var nodemon = require('gulp-nodemon');
 var gulp = require('gulp'); 
+var webpack = require('webpack'); 
+
+var serverProperties = require('./server/properties');
+
 
 gulp.task("start:server", function() {
   nodemon({
@@ -13,3 +17,9 @@ gulp.task("start:server", function() {
   })
 });
 
+gulp.task('start:client', cb => {
+    return require('./webpack.server').start(3000).then(() => {
+        opn(`http://localhost:${3000}`);
+        cb();
+    });
+});

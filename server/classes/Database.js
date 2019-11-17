@@ -2,6 +2,7 @@ import mongoose from "mongoose";
  
 import properties from "../properties.js";
 
+import seed from "../config/seed"
 import HackerNewsModel from "../models/HackerNewsModel";
 
 class Database {
@@ -13,7 +14,7 @@ class Database {
         await this.authenthicate();
         /**init models **/
         HackerNewsModel.init();
- 
+        console.log(seed())
     }
 
     async authenthicate(){
