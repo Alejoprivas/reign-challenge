@@ -4,7 +4,7 @@
   "description": "challenge",
   "scripts": {
     "install": "cd client && npm install && cd ../server && npm install",
-    "start": "concurrently --raw \"cd server && npm start\" \"cd client && ng build --prod\" ",
+    "start": "concurrently --raw \"cd server && npm start\" \"cd client && ng serve\" ",
     "build": "concurrently --raw \"cd server && npm run build\" \"cd client && npm run build\" ",
     "debug": "concurrently --raw \"cd server && npm run debug\" \"cd client && npm run build\" "
   },

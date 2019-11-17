@@ -36,7 +36,7 @@ $ npm start
 
   
 
-Go to http://localhost:3000
+Go to http://localhost:4200
 
   
 
@@ -77,7 +77,7 @@ docker-compose up
 
 ```
 
-* Go to http://localhost:80
+* Go to http://localhost:4200
 
   
   
