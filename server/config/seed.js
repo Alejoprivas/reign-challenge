@@ -7,7 +7,8 @@ import HackerNewsModel from '../models/HackerNewsModel';
 import properties from '../properties';
 
 const start = ()=>{
-    if(!properties.seedDB) {
+    if(properties.seedDB) {
+        console.log("seed database  set to truth")
         let seed = [
             {
             story_title:"This is part of the seed",
@@ -30,7 +31,7 @@ const start = ()=>{
         console.log("seed")
         news.createBulk(seed);   
     }else{
-        console.log("faaa")
+        console.log("seed database not set, you can change it in the properties.js file")
     }
 }
 

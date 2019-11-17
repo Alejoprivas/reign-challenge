@@ -50,6 +50,7 @@ Go to http://localhost:3000
 
 Set database config in `properties.js`
 
+you can seed the database by changing the properties to true.
   
 
 --------------

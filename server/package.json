@@ -4,9 +4,9 @@
   "private": true,
   "description": "Challenge",
   "scripts": {
-    "build": "nodemon app.js",
-    "start": "nodemon app.js",
-    "debug": "nodemon --debug-brk app.js"
+    "build": "nodemon index.js",
+    "start": "nodemon index.js",
+    "debug": "nodemon --debug-brk index.js"
   },
   "keywords": [],
   "author": "",

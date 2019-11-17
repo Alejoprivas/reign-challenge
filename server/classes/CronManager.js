@@ -13,7 +13,7 @@ class CronManager{
 
 
         
-        let task = cronManager.schedule('* * * * *', () => {
+        let task = cronManager.schedule('0 * * * *', () => {
             console.log("Getting hacker rank news");
 
                 https.get(apiUrl, res => {
