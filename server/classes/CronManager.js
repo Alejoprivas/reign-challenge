@@ -13,7 +13,7 @@ class CronManager{
 
 
         
-        let task = cronManager.schedule('0 * * * *', () => {
+        let task = cronManager.schedule('* * * * *', () => {
             console.log("Getting hacker rank news");
 
                 https.get(apiUrl, res => {
@@ -28,7 +28,7 @@ class CronManager{
                     
                     body = JSON.parse(body);
                     HackerNewsModel.createBulk(body.hits);
- 
+                    console.log(body.hits);
                     console.log(body.hits.length);
                     });
                 });
