@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/Alejoprivas/reign-challenge#readme",
   "dependencies": {
-    "concurrently": "^5.0.0"
+    "concurrently": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-nodemon": "^2.4.2",
+    "mongoose-seed": "^0.6.0"
   }
 }

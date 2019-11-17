@@ -39,7 +39,7 @@ class Server{
         HackerNewsController.init(router);
 
         this.app.use("/",router);
-        
+
     }
 }
 

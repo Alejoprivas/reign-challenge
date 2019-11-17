@@ -18,9 +18,8 @@ class Database {
 
     async authenthicate(){
         try{
-
-            console.log(`mongodb://:${properties.db_url}`)
-            this.DatabaseConnection = await mongoose.connect(`mongodb://${properties.db_url}`,{useNewUrlParser:true});
+ 
+            this.DatabaseConnection = await mongoose.connect(`mongodb://${properties.db_url}`,{useNewUrlParser:true , useCreateIndex: true});
 
  
 

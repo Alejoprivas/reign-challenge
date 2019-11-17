@@ -1,4 +1,3 @@
-
 <mat-nav-list>
     <span *ngFor="let news of newslist">
         <mat-list-item  >
@@ -9,7 +8,7 @@
                 <span class="author">
                     - {{news.author}} - 
                 </span>
-                <span class="date_text">
+                <span >
                     {{news.created_at | dateAgo }} 
                 </span>
                 
@@ -20,6 +19,4 @@
         </mat-list-item>
         <mat-divider *ngIf="news.story_title || news.title "></mat-divider>
     </span>
-    </mat-nav-list>    
-
-    
+    </mat-nav-list>

@@ -13,15 +13,17 @@ const HackerNewsModel = {
         title: {
             type: "String"
         },
+        story_url: {
+            type: "String"
+        },
         created_at: {
             type: "String"
         },
         author: {
             type: "String"
         },
-        received: {
-            type: "Boolean", 
-            default: false
+        story_id: {
+            type: "String",
         }
         })
 
@@ -35,9 +37,19 @@ const HackerNewsModel = {
         
         return await HackerNewsModel.model.find();
     },  
-    async create(params) {
+    async createBulk(bulkNews) {
+
+        await HackerNewsModel.model.insertMany(bulkNews, function (err, docs) {
+            if (err){ 
+                return console.error(err);
+            } else {
+              console.log("Inserted many");
+            }
+          });
         
-        return await HackerNewsModel.model.create(Object.assign({},params));
+    },
+    async remove(id) { 
+        await HackerNewsModel.model.findOneAndRemove({ _id: id }).exec(); 
     }
   
 }
